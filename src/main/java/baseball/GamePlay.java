@@ -15,7 +15,6 @@ public class GamePlay {
     // 게임 플레이 함수
     public void play() {
         initSet();
-
         computer.generatorNumber();
 
         while(true) {
@@ -26,6 +25,11 @@ public class GamePlay {
                 break;
             }
 
+            computer.printRestartMessage();
+
+            if(user.inputRestart() == 1) {
+                play();
+            }
         }
 
     }

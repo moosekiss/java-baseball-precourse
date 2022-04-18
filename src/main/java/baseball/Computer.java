@@ -17,17 +17,18 @@ public class Computer {
             int num = Randoms.pickNumberInRange(1, 9);
             if(!randomNumber.contains(num)) {
                 randomNumber.add(num);
+                setNumber.add(num);
             }
         }
     }
 
     // 숫자 입력 메세지 함수
-    public void numberMessage(){
+    public void numberMessage() {
         System.out.print("숫자를 입력해주세요 : ");
     }
 
     // 스트라이크, 볼 개수
-    public boolean ballStrikeNumber(ArrayList<Integer> userNumber){
+    public boolean ballStrikeNumber(ArrayList<Integer> userNumber) {
         int ballNumber = 0;
         int strikeNumber = 0;
 
@@ -40,7 +41,6 @@ public class Computer {
                 ballNumber++;
             }
         }
-
         return isBallStrike(ballNumber, strikeNumber);
     }
 
@@ -54,7 +54,6 @@ public class Computer {
         } else {
             printBallStrike(ballNumber, strikeNumber);
         }
-
         return false;
     }
 
@@ -77,6 +76,11 @@ public class Computer {
         } else {
             System.out.println(ballNumber + "볼 " + strikeNumber + "스트라이크");
         }
+    }
+
+    // 재시작
+    public void printRestartMessage() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
     }
 
 }

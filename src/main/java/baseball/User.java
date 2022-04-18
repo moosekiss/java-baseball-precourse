@@ -56,4 +56,13 @@ public class User {
         }
     }
 
+    // 재시작 입력받는 함수
+    public int inputRestart() {
+        String restartNumber = Console.readLine();
+        if(Integer.parseInt(restartNumber) != 1 && Integer.parseInt(restartNumber) != 2) {
+            throw new IllegalArgumentException("1 또는 2가 아님");
+        }
+        return Integer.parseInt(restartNumber);
+    }
+
 }
