@@ -22,8 +22,10 @@ public class GamePlay {
             computer.numberMessage();
             ArrayList<Integer> userNumber = user.inputNumber();
 
-            System.out.printf("userNumber: " + userNumber);
-            break;
+            if(computer.ballStrikeNumber(userNumber)) {
+                break;
+            }
+
         }
 
     }

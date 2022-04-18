@@ -3,6 +3,8 @@ package baseball;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class User {
 
@@ -12,6 +14,7 @@ public class User {
         isValidDigit(userNumberString);
         isValidLength(userNumberString);
         ArrayList<Integer> userNumber = inputStringNumber(userNumberString);
+        isValidNum(userNumber);
         return userNumber;
     }
 
@@ -42,5 +45,15 @@ public class User {
         }
     }
 
+    // 올바른 수 확인 함수
+    public void isValidNum(ArrayList<Integer> numList) {
+        Set<Integer> SetNum = new HashSet<>(numList); //순서 상관
+        if(SetNum.contains(0)) { // 0존재할 때
+            throw new IllegalArgumentException("0이 존재");
+        }
+        if(SetNum.size() != 3) {
+            throw new IllegalArgumentException("중복된 수 존재");
+        }
+    }
 
 }
